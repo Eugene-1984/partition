@@ -5,9 +5,12 @@ except ImportError:
     from queue import LifoQueue
 import sys
 
-def kk(number_list, group_len=2): # Karmarkar-Karp heuristic
+__all__ = ['kk']
+
+def kk(number_list, group_len=2):
+    """Karmarkar-Karp heuristic"""
     if group_len != 2:
-        sys.exit("unsupported group length: %s for KK algorithm!" % group_len)
+        raise ValueError("unsupported group length: %s for KK algorithm!" % group_len)
     pairs = LifoQueue()
     group1, group2 = [], []
     heap = [(-1*i, i) for i in number_list]
