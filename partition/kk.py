@@ -3,7 +3,6 @@ try:
     from Queue import LifoQueue
 except ImportError:
     from queue import LifoQueue
-import sys
 
 __all__ = ['kk']
 
